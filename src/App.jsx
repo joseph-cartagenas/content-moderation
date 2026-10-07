@@ -73,7 +73,11 @@ function App() {
         TensorFlow toxicity.
       </p>
 
-      <form onSubmit={handleSubmit} className="moderation-form">
+      <form
+        onSubmit={handleSubmit}
+        className="moderation-form"
+        aria-busy={status === 'checking'}
+      >
         <label htmlFor="content-input">Content</label>
         <textarea
           id="content-input"
