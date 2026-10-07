@@ -13,7 +13,12 @@ function App() {
 
   const loadModel = async () => {
     if (!modelPromiseRef.current) {
-      modelPromiseRef.current = toxicity.load(MODERATION_THRESHOLD)
+      modelPromiseRef.current = toxicity
+        .load(MODERATION_THRESHOLD)
+        .catch((error) => {
+          modelPromiseRef.current = null
+          throw error
+        })
     }
 
     return modelPromiseRef.current
