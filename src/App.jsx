@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import * as toxicity from '@tensorflow-models/toxicity'
-import '@tensorflow/tfjs'
+import '@tensorflow/tfjs-core'
+import '@tensorflow/tfjs-converter'
 import './App.css'
 
 const MODERATION_THRESHOLD = 0.9
@@ -61,7 +62,7 @@ function App() {
 
   return (
     <main className="moderation-page">
-      <h1>Real-time Content Moderation</h1>
+      <h1>Submit-time Content Moderation</h1>
       <p className="description">
         Check text for harmful language on client-side submit using React and
         TensorFlow toxicity.
