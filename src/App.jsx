@@ -84,7 +84,10 @@ function App() {
       </form>
 
       {result && (
-        <p className={`result ${result.type}`} role="status">
+        <p
+          className={`result ${result.type}`}
+          role={result.type === 'success' ? 'status' : 'alert'}
+        >
           {result.message}
         </p>
       )}
