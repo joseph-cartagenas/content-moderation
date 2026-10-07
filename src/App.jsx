@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import * as toxicity from '@tensorflow-models/toxicity'
-import '@tensorflow/tfjs-core'
-import '@tensorflow/tfjs-converter'
+import '@tensorflow/tfjs'
 import './App.css'
 
 const MODERATION_THRESHOLD = 0.9
@@ -50,7 +49,8 @@ function App() {
           message: 'Submission approved. No harmful content was detected.',
         })
       }
-    } catch {
+    } catch (error) {
+      console.error(error)
       setResult({
         type: 'error',
         message: 'Moderation could not be completed. Please try again.',
