@@ -1,0 +1,54 @@
+.moderation-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.description {
+  margin-bottom: 1.25rem;
+}
+
+.moderation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.moderation-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #c9ced6;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.moderation-form button {
+  width: fit-content;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.moderation-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.result {
+  margin-top: 1rem;
+}
+
+.result.success {
+  color: #166534;
+}
+
+.result.blocked,
+.result.error {
+  color: #b91c1c;
+}
